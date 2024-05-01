@@ -1,0 +1,31 @@
+- pipeline: "pipeline1"
+  events:
+  - type: "PUSH"
+    refs:
+    - ":default"
+  fail_on_prepare_env_warning: true
+  actions:
+  - action: "echo \"Build Successful!!!\""
+    type: "BUILD"
+    docker_image_name: "library/ubuntu"
+    docker_image_tag: "20.04"
+    execute_commands:
+    - "echo \"Building ....\""
+    - "echo \"Build Successful!!!\""
+    shell: "BASH"
+  - action: "echo \"Tests Successful!!!\""
+    type: "BUILD"
+    docker_image_name: "library/ubuntu"
+    docker_image_tag: "20.04"
+    execute_commands:
+    - "echo \"Testing ....\""
+    - "echo \"Tests Successful!!!\""
+    shell: "BASH"
+  - action: "echo \"Deploy Successful!!!\""
+    type: "BUILD"
+    docker_image_name: "library/ubuntu"
+    docker_image_tag: "20.04"
+    execute_commands:
+    - "echo \"Deploying ....\""
+    - "echo \"Deploy Successful!!!\""
+    shell: "BASH"
