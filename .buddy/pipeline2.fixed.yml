@@ -7,7 +7,6 @@
   actions:
   - action: initialize
     type: BUILD
-    disabled: true
     docker_image_name: buddy/localshell
     docker_image_tag: ubuntu_24.04
     execute_commands:
@@ -17,7 +16,6 @@
     shell: BASH
   - action: Build
     type: BUILD
-    disabled: true
     docker_image_name: buddy/localshell
     docker_image_tag: ubuntu_24.04
     execute_commands:
@@ -27,7 +25,6 @@
     shell: BASH
   - action: testing
     type: BUILD
-    disabled: true
     docker_image_name: buddy/localshell
     docker_image_tag: ubuntu_24.04
     execute_commands:
@@ -37,7 +34,6 @@
     shell: BASH
   - action: deploying
     type: BUILD
-    disabled: true
     docker_image_name: buddy/localshell
     docker_image_tag: ubuntu_24.04
     execute_commands:
