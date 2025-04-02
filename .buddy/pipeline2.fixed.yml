@@ -4,3 +4,12 @@
     refs:
     - refs/heads/main
   fail_on_prepare_env_warning: true
+  actions:
+  - action: sleep 5
+    type: BUILD
+    docker_image_name: buddy/localshell
+    docker_image_tag: ubuntu_24.04
+    execute_commands:
+    - echo "Initialize.."
+    - sleep 5
+    shell: BASH
