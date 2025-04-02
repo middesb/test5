@@ -5,7 +5,37 @@
     - refs/heads/main
   fail_on_prepare_env_warning: true
   actions:
-  - action: inialize
+  - action: initialize
+    type: BUILD
+    disabled: true
+    docker_image_name: buddy/localshell
+    docker_image_tag: ubuntu_24.04
+    execute_commands:
+    - ""
+    - sleep 2
+    - echo "Initialize.."
+    shell: BASH
+  - action: Build
+    type: BUILD
+    disabled: true
+    docker_image_name: buddy/localshell
+    docker_image_tag: ubuntu_24.04
+    execute_commands:
+    - ""
+    - sleep 2
+    - echo "Building.."
+    shell: BASH
+  - action: testing
+    type: BUILD
+    disabled: true
+    docker_image_name: buddy/localshell
+    docker_image_tag: ubuntu_24.04
+    execute_commands:
+    - ""
+    - sleep 2
+    - echo "testing.."
+    shell: BASH
+  - action: deploying
     type: BUILD
     disabled: true
     docker_image_name: buddy/localshell
@@ -13,5 +43,5 @@
     execute_commands:
     - ""
     - sleep 5
-    - echo "Initialize.."
+    - echo "Deploying.."
     shell: BASH
